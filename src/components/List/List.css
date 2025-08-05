@@ -1,0 +1,14 @@
+.List {
+  ul {
+    width: 600px;
+    list-style: none;
+
+    li {
+      padding: 1rem;
+      background: linear-gradient(30deg, #215DEE, #B61CFF);
+      color: #fff;
+      margin-bottom: 10px;
+
+    }
+  }
+}
