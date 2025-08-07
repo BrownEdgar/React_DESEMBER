@@ -1,0 +1,53 @@
+$app-color: #1d1d1d;
+$app-padding: 1rem;
+
+@mixin myFlex() {
+  display: flex;
+  justify-self: center;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.App {
+  margin: 20px auto;
+  padding: $app-padding;
+  background-color: #e3e4e5;
+  color: $app-color;
+  text-align: center;
+  &__title {
+    font-size: 40px;
+    color: crimson;
+  }
+  &__text {
+    line-height: 1.7;
+    font-size: 18px;
+    color: rgb(168, 111, 111);
+    &-sm {
+      font-size: 16px;
+    }
+    &-md {
+      font-size: 20px;
+    }
+    &-lg {
+      font-size: 24px;
+    }
+    &-xl {
+      font-size: 30px;
+    }
+  }
+  &__btn {
+    padding: 0.6rem 1rem;
+    background-color: lightblue;
+    border-radius: 6px;
+    border: 1px solid #222;
+    cursor: pointer;
+  }
+}
+
+.box {
+  @include myFlex();
+}
+.wrap {
+  @include myFlex();
+}

@@ -1,5 +1,5 @@
-import { } from "./About.css";
-function About(props) {
+import "./About.css";
+function About() {
 
 
   return <h1 className='About'>Lorem, ipsum dolor.</h1>
