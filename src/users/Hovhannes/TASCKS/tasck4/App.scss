@@ -1,0 +1,31 @@
+.App {
+  display: flex;
+  margin: 200px auto;
+  gap: 20px;
+  justify-content: center;
+  &__block{
+    padding: 20px;
+    background-color: #1b0b0b;
+    color: rgb(182, 6, 6);
+
+  }
+}
+table, th, td {
+  border-collapse: collapse;
+  padding: 10, 50px;
+  text-align: left;
+  padding-left: 40px;
+  padding-top: 6px;
+  padding-bottom: 6px;
+}
+thead{
+  background-color: #0f89ff;
+  border: 0;
+}
+.head{
+  margin: 0, 30px;
+}
+
+table{
+  width: 600px;
+}
