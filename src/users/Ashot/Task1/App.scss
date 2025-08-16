@@ -1,27 +1,13 @@
-.App{
-   
-    height: 500px;
-    background-color: white;
-    display: flex;
-    justify-content: space-around;
+.App {
+  height: 500px;
+  background-color: white;
+  display: flex;
+  justify-content: space-around;
   align-items: center;
   gap: 10px;
-
-}
-.App__box1{
-   padding-left: 10px;
-  background-color: black;
-  color: aliceblue;
-}
-
-.App__box2{
+  &__box {
     padding-left: 10px;
     background-color: black;
-  color: aliceblue;
-}
-
-.App__box3{
-    padding-left: 10px;
-    background-color: black;
-  color: aliceblue;
+    color: aliceblue;
+  }
 }

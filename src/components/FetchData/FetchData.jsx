@@ -45,7 +45,6 @@ function FetchData() {
           </h2>
         })
       }
-
     </div>
   )
 }
