@@ -1,13 +1,37 @@
 .App {
-  height: 500px;
+  width: 800px;
+  margin: 50px auto;
   background-color: white;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  gap: 10px;
-  &__box {
-    padding-left: 10px;
-    background-color: black;
-    color: aliceblue;
+  color: black;
+  text-align: center;
+
+  &__table {
+    border-collapse: collapse;
+    width: 100%;
+    text-align: center;
+    thead {
+      background-color: rgb(99, 148, 246);
+      color: white;
+    }
+    th,
+    td {
+      padding: 15px;
+    }
+    tr {
+      border-bottom: 2px solid rgba(0, 0, 0, 0.1);
+    }
+
+    button {
+      background-color: rgb(176, 31, 60);
+      color: aliceblue;
+      border-radius: 5px;
+      cursor: pointer;
+      transform: scale(1.05);
+    }
+
+    button:active {
+      transform: scale(0.95);
+      box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
   }
 }
