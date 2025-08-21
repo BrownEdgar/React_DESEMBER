@@ -1,21 +1,33 @@
-// 1. useReducer
-import { useReducer } from 'react';
-import { initialState, reducer } from './reducer';
+import "./App.scss"
+import { useEffect, useReducer } from "react"
+import { initialState, reducer, SAVE_ITEMS, SET_ERROR, SET_LOADING } from "./reducer"
+import List from './List';
 
 function App() {
-  const [state, dispatch] = useReducer(reducer, initialState);
+  const [state, dispatch] = useReducer(reducer, initialState)
 
-  return <div>
-    <div className="buttons">
-      <h2>{JSON.stringify(state, null, 2)}</h2>
-      <h2>{state}</h2>
-      <button onClick={() => dispatch({ type: "push" })}>Push</button>
-      <button onClick={() => dispatch({ type: "uniq" })}>uniq</button>
-      <button onClick={() => dispatch({ type: "sort" })}>sort</button>
-      <button onClick={() => dispatch({ type: "delete", payload: { index: 2 } })}>delete</button>
-      <button onClick={() => dispatch({ type: "save", payload: { n: 1 } })}>delete</button>
+  useEffect(() => {
+    const fetchData = async () => {
+      // sdskf fks kjdsh dskj 
+      dispatch({ type: SET_LOADING, payload: true })
+      try {
+        const response = await fetch('https://jsonplaceholder.typicode.com/todos') // 1s
+        const data = await response.json()
+        dispatch({ type: SAVE_ITEMS, payload: data })
+      } catch (error) {
+        console.log(error);
+
+        dispatch({ type: SET_ERROR, payload: error })
+      }
+    }
+    fetchData()
+  }, []);
+
+  return (
+    <div className='App'>
+      {state.loading ? <h1>LOADING...</h1> : <List data={state.data} />}
     </div>
-  </div>;
+  )
 }
 
-export default App;
+export default App

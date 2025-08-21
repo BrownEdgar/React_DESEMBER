@@ -1,0 +1,33 @@
+$block-border-color: #555;
+$block-padding: 6px 16px;
+
+@mixin flex($jc: start, $ai: start, $gap: 12px) {
+  display: flex;
+  justify-content: $jc;
+  align-items: $ai;
+  align-content: start;
+  gap: $gap;
+  flex-wrap: wrap;
+}
+
+.List {
+  @include flex();
+  &__item {
+    padding: $block-padding;
+    border-radius: 12px;
+    h3 {
+      margin: 0;
+    }
+    &-green {
+      background-color: #10ce03;
+      color: #f2f2f2;
+    }
+    &-red {
+      background-color: crimson;
+      color: #f2f2f2;
+    }
+  }
+  .box {
+    @include flex(start, space-between, 30px);
+  }
+}
