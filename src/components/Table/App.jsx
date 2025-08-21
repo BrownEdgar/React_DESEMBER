@@ -4,14 +4,11 @@ import './App.scss'
 function App() {
   const [data, setData] = useState(jsonData);
   const [sortField, setsortField] = useState('');
-
-
   const handleSort = (property) => {
     let result;
     switch (property) {
       case 'title':
         result = data.toSorted((a, b) => a.title.localeCompare(b.title))
-
         break;
       case 'price':
         result = data.toSorted((a, b) => a.price - b.price)
@@ -27,12 +24,10 @@ function App() {
     setData(result)
   }
 
-
   const total = () => {
     const sum = data.reduce((acc, next) => {
       return acc + next.price
     }, 0)
-
     return `${sum} $`
   }
 
@@ -87,7 +82,6 @@ function App() {
             ) : null
           }
         </tbody>
-
         {
           data.length > 0 ? (
             <tfoot>
@@ -100,7 +94,6 @@ function App() {
             </tfoot>
           ) : null
         }
-
       </table>
 
     </div>

@@ -1,11 +1,11 @@
-import './App.scss'
-import FetchData from './components/FetchData/FetchData';
+import Posts from './components/Posts/Posts';
+import './App.css'
 
 
 function App() {
   return (
     <div className='App'>
-      <FetchData />
+      <Posts />
     </div>
   );
 }
