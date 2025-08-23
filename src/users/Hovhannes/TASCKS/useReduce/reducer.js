@@ -22,22 +22,19 @@ const uniq = (state) => {
 }
 
 const sortArray = (state) => {
-   const result = state.toSorted((a, b) => a-b)
-   return result
+  const result = state.toSorted((a, b) => a - b)
+  return result
 }
 
 const deleteItem = (state, index) => {
   //  const copy = state.slice(0, -1)
-    const copy = state.toSpliced(index, 1)
-    return copy
+  const copy = state.toSpliced(index, 1)
+  return copy
 }
 
 const deleteIncNum = (state, number) => {
-  const strArr = []
-  state.map((elem) => {
-    if(!(elem.toString().includes(number))){
-      strArr.push(elem)
-    }
-  })  
+  const strArr = state.filter((elem) => {
+    return !(elem.toString().includes(number))
+  })
   return strArr
 }
