@@ -5,7 +5,6 @@ import List from './List';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState)
-
   useEffect(() => {
     const fetchData = async () => {
       // sdskf fks kjdsh dskj 
