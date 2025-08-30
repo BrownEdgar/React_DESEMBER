@@ -1,15 +1,21 @@
-import { useState } from 'react';
-import { Layouts } from './Contexts/MyContext';
-import Dashboard from './Dashboard';
+import { Fragment, useState } from 'react';
 
-function App() {
-  const [data, setData] = useState([2, 4, 6]);
 
-  return <div className='App'>
-    <Layouts value={{ data, setData }}>
-      <Dashboard />
-    </Layouts>
-  </div>;
+export default function App() {
+  const [arr, setarr] = useState(['html', 'css', 'Java Script', 'React.js', 'Node.js', 'Python']);
+
+
+  return (
+    <div className='App'>
+      {
+        arr.map((elem, index) => {
+          return (
+            <Fragment key={elem}>
+              <p>{elem}</p>
+            </Fragment>
+          )
+        })
+      }
+    </div>
+  );
 }
-
-export default App;
