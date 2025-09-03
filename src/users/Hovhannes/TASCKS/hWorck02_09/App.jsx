@@ -2,7 +2,7 @@ import { useState } from "react"
 import "./App.scss"
 
 
-const abc = ["A", "B", "C", "D"]
+const abc = ["A", "B", "C", "D", "E"]
 export default function App(){
   const [letrArr, setLetrArr] = useState("...");
 
