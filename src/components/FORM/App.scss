@@ -1,0 +1,55 @@
+$app-bg: #e2dcdc;
+$app-width: 450px;
+
+.App {
+  background-color: $app-bg;
+  width: $app-width;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 30px auto;
+  text-align: center;
+  &__form {
+    width: 100%;
+    & > div {
+      text-align: left;
+      margin-bottom: 12px;
+      & > label {
+        margin-bottom: 8px;
+        display: inline-block;
+        font-size: 18px;
+      }
+      & > input {
+        width: 100%;
+        padding: 1rem;
+        font-size: 18px;
+        border-radius: 8px;
+        border: 1px solid #ddd;
+        &[type='submit'] {
+          cursor: pointer;
+          transition: 0.1s;
+          border-color: rgb(41, 103, 12);
+          &:active {
+            scale: 0.98;
+            background-color: #23ad3c;
+          }
+        }
+      }
+    }
+  }
+}
+
+.users {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-auto-rows: 200px;
+  gap: 30px;
+  & > div {
+    background-color: #111;
+    padding: 1rem;
+    color: rgb(246, 255, 0);
+    font-family: 'Courier New', Courier, monospace;
+    p {
+      word-break: break-all;
+    }
+  }
+}
