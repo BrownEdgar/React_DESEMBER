@@ -8,11 +8,10 @@
   text-align: center;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
-  &__let{
+  &__let {
     display: flex;
     justify-content: center;
     align-items: center;
-    // border: 1px solid #111;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     width: 200px;
     height: 200px;
@@ -21,34 +20,23 @@
     margin: 50px auto;
   }
 
-  &__letDiv{
+  &__letDiv {
     margin: 20px auto;
     width: 50%;
     padding: 20px;
-    
-    justify-content: center;
     font-size: 30px;
-
-    &__upLeter{
-      display: flex;
-      height: 40px;
-      margin: 20px;
-      padding: 4px;
-      // border: 1px solid #111;
+    &__upLeter {
+      width: 100%;
+      margin: 20px auto;
       box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
       cursor: pointer;
-      justify-content: center;
-      &:hover{
+      text-align: center;
+      &:hover {
         background-color: #ae7003;
       }
     }
-
-    &__activ{
-      height: 40px;
-      padding: 4px;
-      margin: 20px;
+    &__activ {
       background-color: #e99a02;
     }
   }
 }
-
