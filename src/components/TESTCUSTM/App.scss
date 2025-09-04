@@ -1,0 +1,88 @@
+.App {
+    width: 300px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #b0a8a8;
+    border-radius: 16px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+    font-family: 'Courier New', Courier, monospace;
+  }
+  
+  .App__count {
+    border: 1px solid rgb(207, 11, 11);
+    background-color: #ddecf5;
+    color: #160429;
+    font-size: 42px;
+    padding: 20px;
+    border-radius: 8px;
+    text-align: right;
+    box-shadow: inset 0 0 5px #eedde1;
+    animation: countAppear 0.4s ease, countPulse 0.3s ease;
+  }
+  
+  @keyframes countAppear {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  
+  @keyframes countPulse {
+    0% {
+      transform: scale(1);
+
+    }
+    50% {
+      transform: scale(1.1);
+   
+    }
+    100% {
+      transform: scale(1);
+
+    }
+  }
+  
+  .App__minus,
+  .App__plus,
+  .App__addnum,
+  .App__incrase {
+    background-color: #c8d1cc;
+    color: rgb(9, 10, 8);
+    border: none;
+    padding: 14px 0;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: transform 0.2s ease, background-color 0.2s ease;
+    box-shadow: 0 3px 0 #dc5c62;
+    width: 100%;
+  
+    &:hover {
+      background-color: #e9eedf;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 6px rgba(196, 12, 18, 0.4);
+    }
+  
+    &:active {
+      transform: translateY(0);
+      box-shadow: inset 0 1px 2px rgba(82, 3, 3, 0.5);
+    }
+  }
+  
+
+  .App__minus,
+  .App__plus,
+  .App__addnum {
+    margin-top: 15px;
+    margin-bottom: 20px;
+  }
+  
+  
