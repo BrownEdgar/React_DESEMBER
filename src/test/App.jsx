@@ -1,21 +1,24 @@
-import { Fragment, useState } from 'react';
+import { useEffect, useState } from 'react';
 
 
 export default function App() {
-  const [arr, setarr] = useState(['html', 'css', 'Java Script', 'React.js', 'Node.js', 'Python']);
+
+  const [arr, setArr] = useState(() => {
+    return JSON.parse(localStorage.getItem('arr') || '[]')
+  });
+
+
 
 
   return (
     <div className='App'>
-      {
-        arr.map((elem, index) => {
-          return (
-            <Fragment key={elem}>
-              <p>{elem}</p>
-            </Fragment>
-          )
-        })
-      }
+      <h1>arr:{JSON.stringify(arr, null, 1)}</h1>
+      <ul>
+        {arr.map((elem) => {
+          return <li key={elem}>{elem.toUpperCase()}</li>
+        })}
+      </ul>
+
     </div>
   );
 }

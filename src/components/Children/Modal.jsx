@@ -14,17 +14,14 @@ function Modal({ children, toggleModal, variant = "info", duration = 5 }) {
         toggleModal()
       }
     }
-    const interval = setTimeout(() => {
-      toggleModal()
-    }, duration * 1000);
+
 
 
     current.addEventListener('click', handleClick)
     return () => {
       current.removeEventListener('click', handleClick);
-      clearTimeout(interval)
     };
-  }, [toggleModal, duration]);
+  }, [toggleModal]);
 
   return (
     <div className='Modal' ref={modalRef}>
