@@ -1,0 +1,71 @@
+.App {
+  width: 700px;
+  margin: 120px auto;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  border-radius: 12px;
+  background-color: #fff;
+  &__header {
+    border-bottom: 1px solid #ddd;
+    padding: 12px;
+    & > select {
+      margin-left: auto;
+      display: block;
+      padding: 6px 4px;
+      font-size: 18px;
+    }
+  }
+  &__car {
+    img {
+      display: block;
+      margin: 0 auto;
+      max-width: 100%;
+      margin-bottom: 20px;
+    }
+    ul {
+      display: flex;
+      padding-left: 0;
+      gap: 14px;
+      li {
+        i.pi {
+          font-size: 22px;
+        }
+      }
+    }
+  }
+}
+
+button {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  margin: 0 20px;
+  border: 0px solid #ddd;
+  background-color: transparent;
+  font-size: 20px;
+  font-weight: 600;
+  cursor: pointer;
+  position: relative;
+}
+
+button::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 2px;
+  background: currentColor;
+  /* effect */
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform 250ms ease-in;
+}
+
+button:hover::after {
+  content: '';
+  transform-origin: left;
+  transform: scaleX(1);
+  transition: transform 250ms ease-in;
+}
