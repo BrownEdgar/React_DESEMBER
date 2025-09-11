@@ -1,24 +1,24 @@
-import { useEffect, useState } from 'react';
-
-
-export default function App() {
-
-  const [arr, setArr] = useState(() => {
-    return JSON.parse(localStorage.getItem('arr') || '[]')
-  });
+import { useCallback, useMemo, useState } from "react";
+import A from './A';
+// Կոմպոնոնտը թարմանում է նաև props-ի փոփոխությունից
+// եթե թարմանում է նրա ծնողը վերադաս կոմպոնենտը
+// useCalback, useMemo
 
 
 
 
-  return (
-    <div className='App'>
-      <h1>arr:{JSON.stringify(arr, null, 1)}</h1>
-      <ul>
-        {arr.map((elem) => {
-          return <li key={elem}>{elem.toUpperCase()}</li>
-        })}
-      </ul>
+function App() {
+  const [count, setCount] = useState(1);
+  const y = useCallback(() => {
+    console.log('click');
+  }, [])
 
-    </div>
-  );
+  const ComponentMemo = useMemo(() => <A y={y} />, [y])
+  return <div className='App'>
+    <h1>Count: {count}</h1>
+    <button onClick={() => setCount(count + 1)}>add Count</button>
+    {ComponentMemo}
+  </div>;
 }
+
+export default App;
