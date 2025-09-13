@@ -1,0 +1,44 @@
+$app-bg: #f4f4f4;
+
+
+.App{
+  background-color: $app-bg;
+  margin: 20px auto;
+  width: 900px;
+  min-height: 300px;
+  padding: 50px;
+  &__form{
+    width: 100%;
+    & > input{
+      padding: 6px;
+      font-size: 16px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      margin: 10px;
+      &[type="submit"]{
+        cursor: pointer;
+        transition: 0.1s;
+        background-color: #dbdbdb;
+        &:active{
+          scale: 0.98;
+          background-color: #cccccc;
+        }
+        &:hover{
+          background-color: #c7c7c7;
+        }
+      }
+    }
+    & > label{
+      font-size: 18px;
+      font-weight: 700;
+    }
+  }
+  &__listNote div{
+    // border: 1px solid black;
+    width: 50%;
+    margin: 10px auto;
+    display: flex;
+    justify-content:baseline;
+
+  }
+}
