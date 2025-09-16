@@ -4,9 +4,6 @@ import A from './A';
 // եթե թարմանում է նրա ծնողը վերադաս կոմպոնենտը
 // useCalback, useMemo
 
-
-
-
 function App() {
   const [count, setCount] = useState(1);
   const y = useCallback(() => {
