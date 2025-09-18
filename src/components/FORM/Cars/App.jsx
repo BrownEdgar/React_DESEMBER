@@ -2,7 +2,7 @@ import { useState } from 'react';
 import "./App.scss";
 
 function App() {
-  const [cars, setCars] = useState([
+  const [cars] = useState([
     {
       id: 1,
       model: "Audi",
@@ -41,13 +41,11 @@ function App() {
     },
   ]);
 
-  const [currentCar, setCurrentCar] = useState(2);
+  const [currentCar] = useState(2);
   const car = cars.find((elem) => elem.id === currentCar)
 
 
-  const handleChange = (e) => {
-    setCurrentCar(+e.target.value)
-  }
+
   return (
     <div className='App'>
       <div className="App__header">
