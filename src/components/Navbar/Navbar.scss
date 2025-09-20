@@ -1,0 +1,27 @@
+.navbar {
+  background-color: #333;
+  color: white;
+  padding: 1rem;
+  margin-bottom: 40px;
+
+  .navbar__logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+  }
+
+  .navbar__links {
+    display: flex;
+    justify-content: end;
+    gap: 1rem;
+
+    a {
+      color: white;
+      text-decoration: none;
+
+      &.active {
+        font-weight: bold;
+        color: #ffcc00;
+      }
+    }
+  }
+}
