@@ -1,15 +1,19 @@
 import { NavLink } from 'react-router';
 import './Navbar.scss';
+import { menuItems } from '../../constants/constants';
 
 function Navbar() {
   return <header className="navbar">
 
     <nav>
       <ul className="navbar__links">
-        <li><NavLink to="/">Home</NavLink></li>
-        <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/services">Services</NavLink></li>
-        <li><NavLink to="/contact">Contact</NavLink></li>
+        {menuItems.map(item => (
+          <li key={item.name}>
+            <NavLink to={item.path}>
+              {item.name}
+            </NavLink>
+          </li>
+        ))}
       </ul>
     </nav>
   </header>;

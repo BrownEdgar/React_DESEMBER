@@ -1,13 +1,19 @@
-import Home from './pages/Home/Home';
-import About from './pages/About/About';
-import Services from './pages/Services/Services';
-import Contact from './pages/Contact/Contact';
-
-
+import {
+  About,
+  Contact,
+  ErrorPage,
+  Home,
+  Services,
+  User,
+  UserForm,
+  Users
+} from './pages';
 import {
   createBrowserRouter,
 } from "react-router";
 import MainLayout from './layouts/MainLayout';
+
+
 
 export const router = createBrowserRouter([
   {
@@ -23,6 +29,10 @@ export const router = createBrowserRouter([
         Component: About,
       },
       {
+        path: "add-user",
+        Component: UserForm,
+      },
+      {
         path: "services",
         Component: Services,
       },
@@ -30,6 +40,18 @@ export const router = createBrowserRouter([
         path: "contact",
         Component: Contact,
       },
+      {
+        path: "users",
+        Component: Users,
+      },
+      {
+        path: "users/:id",
+        Component: User,
+      },
+      {
+        path: "*",
+        Component: ErrorPage,
+      }
     ]
   },
 ]);
