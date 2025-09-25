@@ -1,8 +1,17 @@
-import { Outlet } from 'react-router';
+import { Navigate, Outlet } from 'react-router';
 import Navbar from '../components/Navbar/Navbar';
 import { useState } from 'react';
 
 export default function MainLayout() {
+
+  const [token, setToken] = useState(() => {
+    return localStorage.getItem('token');
+  });
+
+  if (!token || token !== 'admin') {
+    return <Navigate to="/auth" />
+  }
+
   const [users, setUsers] = useState([
     { id: 1, name: 'John Doe', email: 'KXa7o@example.com' },
     { id: 2, name: 'Jane Smith', email: 'Fw6Q5@example.com' },

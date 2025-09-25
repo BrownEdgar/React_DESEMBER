@@ -6,12 +6,14 @@ import {
   Services,
   User,
   UserForm,
-  Users
+  Users,
+  Login
 } from './pages';
 import {
   createBrowserRouter,
 } from "react-router";
 import MainLayout from './layouts/MainLayout';
+import AuthLayout from './layouts/AuthLayout';
 
 
 
@@ -54,4 +56,14 @@ export const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: "/auth",
+    Component: AuthLayout,
+    children: [
+      {
+        index: true,
+        Component: Login,
+      }
+    ]
+  }
 ]);
