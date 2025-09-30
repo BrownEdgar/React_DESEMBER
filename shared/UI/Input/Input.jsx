@@ -1,10 +1,7 @@
 import './Input.scss';
 import { ErrorMessage, Field } from 'formik';
 
-
 function Input({ type = "text", name, placeholder, value, hideErrorMessage }) {
-
-
   return (
     <div className="Form__input">
       <Field
