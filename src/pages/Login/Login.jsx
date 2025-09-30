@@ -8,6 +8,7 @@ const initialValues = {
   email: '',
   password: '',
 }
+const { VITE_USER_EMAIL, VITE_USER_PASSWORD } = import.meta.env
 
 const validationSchema = yup.object({
   email: yup.string().email('Invalid email format').required('Email is required'),
@@ -18,7 +19,7 @@ const validationSchema = yup.object({
 function Login() {
   const navigate = useNavigate();
   const handleSubmit = ({ email, password }) => {
-    if (email === 'admin@gmail.com' && password === '123456') {
+    if (email === VITE_USER_EMAIL && password === VITE_USER_PASSWORD) {
       localStorage.setItem('token', 'admin');
       navigate('/users');
     } else {

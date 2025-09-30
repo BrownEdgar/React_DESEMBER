@@ -1,14 +1,14 @@
-import {
-  About,
-  Contact,
-  ErrorPage,
-  Home,
-  Services,
-  User,
-  UserForm,
-  Users,
-  Login
-} from './pages';
+import { lazy } from 'react';
+
+const About = lazy(() => import("./pages/About/About"))
+const Contact = lazy(() => import("./pages/Contact/Contact"))
+const Home = lazy(() => import("./pages/Home/Home"))
+const Services = lazy(() => import("./pages/Services/Services"))
+const UserForm = lazy(() => import("./pages/UserForm/UserForm"))
+const Users = lazy(() => import("./pages/Users/Users"))
+const User = lazy(() => import("./pages/User/User"))
+const ErrorPage = lazy(() => import("./pages/ErrorPage/ErrorPage"))
+const Login = lazy(() => import("./pages/Login/Login"));
 import {
   createBrowserRouter,
 } from "react-router";
