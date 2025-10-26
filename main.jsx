@@ -1,4 +1,5 @@
 import './index.css'
+import 'react-loading-skeleton/dist/skeleton.css'
 import 'primeicons/primeicons.css';
 import { createRoot } from 'react-dom/client'
 import App from './App';

@@ -45,3 +45,15 @@ input {
   width: 300px;
   margin-right: 10px;
 }
+
+.error {
+  color: crimson;
+  border: 2px solid crimson;
+  border-radius: 6px;
+  padding: 8px;
+}
+
+.skeleton {
+  margin: 4px auto;
+  display: block;
+}

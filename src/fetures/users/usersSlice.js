@@ -1,8 +1,14 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import { fetchUsersData } from './users-api';
+
+
+export const fetchUsers = createAsyncThunk('users/fetchUsers', fetchUsersData)
 
 const initialState = {
   data: [],
-  edited: false
+  edited: false,
+  loading: false,
+  error: null
 }
 
 const usersSlice = createSlice({
@@ -13,7 +19,11 @@ const usersSlice = createSlice({
       state.data = payload;
     },
     addUser: (state, { payload }) => {
-      state.data.push(payload);
+      return {
+        data: [...state.data, payload],
+        edited: true
+      }
+
     },
     updateUser: (state, { payload }) => {
       return {
@@ -27,6 +37,23 @@ const usersSlice = createSlice({
         edited: true
       }
     }
+  },
+  extraReducers: (bulder) => {
+    bulder
+      .addCase(fetchUsers.pending, (state, action) => {
+        state.loading = true
+      })
+      .addCase(fetchUsers.fulfilled, (state, action) => {
+        console.log(action);
+        state.data = action.payload
+        state.loading = false
+      })
+      .addCase(fetchUsers.rejected, (state, action) => {
+        console.log(action);
+        state.error = action.error.message
+        state.data = []
+        state.loading = false
+      })
   }
 })
 
