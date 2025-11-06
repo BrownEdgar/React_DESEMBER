@@ -9,3 +9,15 @@ export interface IProps {
   hello?: () => void;
   data: IState[];
 }
+
+export interface IPost {
+  "id": string,
+  "category": "sport" | "style" | "lifeStyle" | "travel",
+  "title": string,
+  "views": number,
+  "date": string,
+  "author": string,
+  "description": string,
+  "image": string
+}
+
